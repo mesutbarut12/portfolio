@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 const socialVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -11,16 +11,16 @@ const socialVariants = {
       delay: i * 0.2,
       duration: 0.5,
       type: "spring",
-      stiffness: 120
-    }
-  })
-}
+      stiffness: 120,
+    },
+  }),
+};
 
 export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -28,7 +28,7 @@ export default function ContactSection() {
         >
           Get In Touch
         </motion.h2>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -46,7 +46,13 @@ export default function ContactSection() {
               📧 mesutbarut843@gmail.com
             </motion.a>
             <div className="flex gap-4">
-              {['GitHub', 'LinkedIn'].map((platform, index) => (
+              {[
+                { platform: "GitHub", link: "https://github.com/mesutbarut12" },
+                {
+                  platform: "LinkedIn",
+                  link: "https://www.linkedin.com/in/mesut-barut-00814230b",
+                },
+              ].map(({ link, platform }, index) => (
                 <motion.a
                   key={platform}
                   custom={index}
@@ -54,7 +60,7 @@ export default function ContactSection() {
                   initial="hidden"
                   whileInView="visible"
                   whileHover={{ y: -5 }}
-                  href={`https://${platform.toLowerCase()}.com/in/mesut-barut-00814230b`}
+                  href={link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 hover:text-gray-900"
@@ -67,5 +73,5 @@ export default function ContactSection() {
         </motion.div>
       </div>
     </section>
-  )
-} 
+  );
+}
