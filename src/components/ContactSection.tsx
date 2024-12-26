@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MdEmail } from "react-icons/md";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socialVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -40,19 +42,24 @@ export default function ContactSection() {
               whileInView={{ scale: 1 }}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              href="mailto:your.email@example.com"
+              href="mailto:mesutbarut843@gmail.com"
               className="flex items-center gap-2 text-blue-500 hover:text-blue-600"
             >
-              📧 mesutbarut843@gmail.com
+              <MdEmail className="text-xl" /> mesutbarut843@gmail.com
             </motion.a>
-            <div className="flex gap-4">
+            <div className="flex gap-6">
               {[
-                { platform: "GitHub", link: "https://github.com/mesutbarut12" },
+                {
+                  platform: "GitHub",
+                  link: "https://github.com/mesutbarut12",
+                  icon: <FaGithub className="text-xl" />,
+                },
                 {
                   platform: "LinkedIn",
                   link: "https://www.linkedin.com/in/mesut-barut-00814230b",
+                  icon: <FaLinkedin className="text-xl" />,
                 },
-              ].map(({ link, platform }, index) => (
+              ].map(({ link, platform, icon }, index) => (
                 <motion.a
                   key={platform}
                   custom={index}
@@ -63,9 +70,9 @@ export default function ContactSection() {
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-gray-900"
+                  className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
                 >
-                  {platform}
+                  {icon} {platform}
                 </motion.a>
               ))}
             </div>
