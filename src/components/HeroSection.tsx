@@ -49,7 +49,7 @@ export default function HeroSection() {
                 src="/profile-placeholder.jpg"
                 alt="Profile Picture"
                 fill
-                className="rounded-full object-cover border-4 border-blue-400/30"
+                className="rounded-full object-scale-down border-4 border-blue-400/30"
                 priority
               />
             </div>
