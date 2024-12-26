@@ -1,49 +1,49 @@
 "use client";
 
-import { motion } from 'framer-motion'
-import { skills } from '@/data/skills'
+import { motion } from "framer-motion";
+import { skills } from "@/data/skills";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const skillVariants = {
-  hidden: { 
+  hidden: {
     opacity: 0,
     scale: 0,
-    rotate: -180
+    rotate: -180,
   },
-  visible: { 
+  visible: {
     opacity: 1,
     scale: 1,
     rotate: 0,
     transition: {
       type: "spring",
       stiffness: 260,
-      damping: 20
-    }
-  }
-}
+      damping: 20,
+    },
+  },
+};
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center mb-12"
+          className="text-4xl font-bold text-center mb-12 text-white"
         >
           Skills
         </motion.h2>
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -53,12 +53,11 @@ export default function SkillsSection() {
             <motion.div
               key={skill}
               variants={skillVariants}
-              whileHover={{ 
-                scale: 1.1,
-                rotate: 5,
-                transition: { duration: 0.2 }
+              whileHover={{
+                scale: 1.05,
+                rotate: 0,
               }}
-              className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow"
+              className="bg-gray-700/50 p-4 rounded-xl text-center text-gray-200 border border-gray-600/50 backdrop-blur-sm"
             >
               {skill}
             </motion.div>
@@ -66,5 +65,5 @@ export default function SkillsSection() {
         </motion.div>
       </div>
     </section>
-  )
-} 
+  );
+}

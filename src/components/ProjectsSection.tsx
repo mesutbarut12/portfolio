@@ -33,13 +33,13 @@ const projectVariants = {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center mb-12"
+          className="text-4xl font-bold text-center mb-12 text-white"
         >
           Featured Projects
         </motion.h2>
@@ -54,29 +54,33 @@ export default function ProjectsSection() {
               key={project.id}
               variants={projectVariants}
               whileHover={{
-                scale: 1.05,
+                scale: 1.02,
                 transition: { duration: 0.2 },
               }}
-              className="bg-white rounded-lg overflow-hidden shadow-lg"
+              className="bg-gray-800 rounded-xl overflow-hidden shadow-xl border border-gray-700"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={200}
-                className="w-full h-48 object-scale-down p-3"
-              />
+              <div className="p-4 bg-gray-700/30">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-scale-down rounded-lg"
+                />
+              </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-2">{project.description}</p>
-                <p className="text-sm text-gray-500 mb-4">
+                <h3 className="text-xl font-bold mb-2 text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 mb-2">{project.description}</p>
+                <p className="text-sm text-gray-400 mb-4">
                   {project.startDate} - {project.endDate}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                      className="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-sm"
                     >
                       {tech}
                     </span>
@@ -87,9 +91,9 @@ export default function ProjectsSection() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-600"
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300"
                   >
-                    View Project →
+                    View Project <span className="ml-1">→</span>
                   </a>
                 )}
               </div>

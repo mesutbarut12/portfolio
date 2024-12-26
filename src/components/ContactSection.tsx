@@ -20,13 +20,13 @@ const socialVariants = {
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center mb-12"
+          className="text-4xl font-bold text-center mb-12 text-white"
         >
           Get In Touch
         </motion.h2>
@@ -36,28 +36,28 @@ export default function ContactSection() {
           transition={{ duration: 0.5 }}
           className="max-w-xl mx-auto"
         >
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-8">
             <motion.a
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               href="mailto:mesutbarut843@gmail.com"
-              className="flex items-center gap-2 text-blue-500 hover:text-blue-600"
+              className="flex items-center gap-3 text-blue-400 hover:text-blue-300 text-lg"
             >
-              <MdEmail className="text-xl" /> mesutbarut843@gmail.com
+              <MdEmail className="text-2xl" /> mesutbarut843@gmail.com
             </motion.a>
-            <div className="flex gap-6">
+            <div className="flex gap-8">
               {[
                 {
                   platform: "GitHub",
                   link: "https://github.com/mesutbarut12",
-                  icon: <FaGithub className="text-xl" />,
+                  icon: <FaGithub className="text-2xl" />,
                 },
                 {
                   platform: "LinkedIn",
                   link: "https://www.linkedin.com/in/mesut-barut-00814230b",
-                  icon: <FaLinkedin className="text-xl" />,
+                  icon: <FaLinkedin className="text-2xl" />,
                 },
               ].map(({ link, platform, icon }, index) => (
                 <motion.a
@@ -70,7 +70,7 @@ export default function ContactSection() {
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
+                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 text-lg"
                 >
                   {icon} {platform}
                 </motion.a>
