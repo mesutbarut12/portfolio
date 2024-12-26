@@ -16,8 +16,9 @@ export const projects: Project[] = [
     description: "Angular in Frontend and Dotnet in Backend",
     image: "/studex.png",
     technologies: ["Angular", "Dotnet"],
-    startDate: "November 2023",
-    endDate: "Present",
+    startDate: "November 2022",
+    endDate: "July 2023",
+   
   },
   {
     id: 2,
@@ -26,7 +27,7 @@ export const projects: Project[] = [
     image: "/angular.jpg",
     technologies: ["Angular", "HTML", "CSS", "SASS", "NGRX", "RXJS"],
     link: "https://lohnunioncenter.de",
-    startDate: "November 2022",
-    endDate: "July 2023",
+    startDate: "November 2023",
+    endDate: "Present",
   },
 ];
